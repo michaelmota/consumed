@@ -5,6 +5,7 @@ from django.db import models
 from . import constants
 
 class Doctor(models.Model):
+	"""App that will manage all the doctors on the center."""
 	name = models.CharField(max_length=255)
 	last_name = models.CharField(max_length=255)
 	cedula = models.CharField(max_length=255)
