@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-from . import constants
+from .constants import sex, ars_insurance
 
 class Doctor(models.Model):
 	"""App that will manage all the doctors on the center."""
@@ -22,7 +22,7 @@ class PatientProfile(models.Model):
 	cedula = models.CharField(max_length=255)
 	sex = models.CharField(max_length=255, choices=sex)
 	datebirth = models.DateField()
-	refered_by = modes.CharField(max_length=255)
+	refered_by = models.CharField(max_length=255)
 	insurance = models.CharField(max_length=255, choices=ars_insurance)
 	# Contact Info
 	address = models.CharField(max_length=255, blank=True)
