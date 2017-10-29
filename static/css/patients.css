@@ -4,7 +4,9 @@ User Profile Sidebar Alterna Group, SRL
 ***/
 
 body {
-  background: #F1F3FA;
+    font-family: "proxima-nova", -apple-system, sans-serif;
+    color: #212647;
+    background-color: #EAEEF2;
 }
 
 /* Profile container */
@@ -16,6 +18,10 @@ body {
 .profile-sidebar {
   padding: 20px 0 10px 0;
   background: #fff;
+}
+.patient-add-sidebar {
+    padding: 20px 0px 10px 20px;
+    background: #fff;
 }
 
 .profile-userpic img {
@@ -106,7 +112,13 @@ body {
 
 /* Profile Content */
 .profile-content {
-  padding: 20px;
+  padding: 70px;
+  background: #fff;
+  min-height: 460px;
+  border: 1px solid #c3d2dc;
+}
+.patient-add-content {
+  padding: 70px;
   background: #fff;
   min-height: 460px;
 }
@@ -119,4 +131,16 @@ body {
 .nav>li {
     position: relative;
     display: block;
+}
+.panel .panel-heading {
+    border-bottom: 1px solid #dbe4ea;
+    background: #f8f9fa;
+}
+
+.panel-heading {
+    padding: 14px 23px 6px 14px;
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    background: #f8f9fa;
+    border: 1px solid #c3d2dc;
 }

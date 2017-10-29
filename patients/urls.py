@@ -3,10 +3,9 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 
 ### IMPORT ###
-from .views import (
-	test_view,
-)
+from .views import PatientNew, PatientList
 
 urlpatterns = [
-	url(r'^$', test_view, name='test'),
+	url(r'$', PatientList.as_view(), name="patients"),
+	url(r'nuevo/$', PatientNew.as_view(), name="patient-new"),
 ]

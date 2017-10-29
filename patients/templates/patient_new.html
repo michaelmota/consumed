@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block custom_css %}
+	<!-- TEMPLATE CUSTOM CSS -->
+	<link href="{% static 'css/patients.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-9">
+			<div class="patient-add-content">
+				<h4>Información Principal</h4>
+				<hr/>
+				<form>
+				  <div class="form-group row">
+				    <label for="inputEmail3" class="col-sm-4 col-form-label">Nombre Completo</label>
+				    <div class="col-sm-8">
+				      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Cédula</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Sexo</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Edad</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Fecha de Nacimiento</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Referido por</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Seguro Médico</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+
+				  <br/>
+				  <h4>Información de Contacto</h4>
+				  <hr/>
+				  <div class="form-group row">
+				    <label for="inputEmail3" class="col-sm-4 col-form-label">Dirección</label>
+				    <div class="col-sm-8">
+				      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Teléfono</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Teléfono 2</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Celular</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+
+				  <br/>
+				  <h4>Información Laboral</h4>
+				  <hr/>
+				  <div class="form-group row">
+				    <label for="inputEmail3" class="col-sm-4 col-form-label">Ocupación</label>
+				    <div class="col-sm-8">
+				      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Lugar de Trabajo</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Posición</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Teléfono del Trabajo</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+
+				  <br/>
+				  <h4>Contacto de Emergencia</h4>
+				  <hr/>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">En caso de emergencia contactar a</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Teléfono</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Celular</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="inputPassword3" class="col-sm-4 col-form-label">Otro número</label>
+				    <div class="col-sm-8">
+				      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				    </div>
+				  </div>
+				  <hr/>
+				  <button type="button" class="btn btn-danger">Cancelar</button> 
+				  <button type="button" class="btn btn-success">Registrar Nuevo Paciente</button>
+				</form>
+			</div>
+		</div>
+		<div class="col-md-3">
+            <div class="patient-add-sidebar">
+				<p>Si presenta inconvenientes, favor contactar al administrador.</p>
+            </div>
+		</div>
+	</div>
+</div>
+{% endblock %}

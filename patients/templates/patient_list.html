@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block custom_css %}
+	<!-- TEMPLATE CUSTOM CSS -->
+	<link href="{% static 'css/patients.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-12">
+<div class="panel-heading hidden-xs">
+<h5 class="panel-title">Listado de Pacientes</h5>
+</div>
+			<div class="profile-content">
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th scope="col">ID</th>
+				      <th scope="col">Nombre Completo</th>
+				      <th scope="col">Teléfono</th>
+				      <th scope="col">Acciones</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">3</th>
+				      <td>Larry</td>
+				      <td>the Bird</td>
+				      <td>
+				      		<!-- EDIT -->
+					      	<a class="btn btn-outline-primary btn-sm" href="#" role="button">
+					      		<i class="fa fa-pencil" aria-hidden="true"></i>
+				      		</a> 
+				      		<!-- DELETE -->
+				      		<a class="btn btn-outline-danger btn-sm" href="#" role="button">
+				      			<i class="fa fa-times" aria-hidden="true"></i>
+				      		</a>
+				      </td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
