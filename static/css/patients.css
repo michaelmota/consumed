@@ -1,7 +1,6 @@
 /***
-User Profile Sidebar by @keenthemes
-A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
-Licensed under MIT
+User Profile Sidebar Alterna Group, SRL
+- MICHAEL MOTA -
 ***/
 
 body {
@@ -110,4 +109,14 @@ body {
   padding: 20px;
   background: #fff;
   min-height: 460px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.nav>li {
+    position: relative;
+    display: block;
 }

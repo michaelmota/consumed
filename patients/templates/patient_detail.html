@@ -11,7 +11,7 @@
 			<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 				<div class="profile-userpic">
-					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+					<center><img src="{% static 'img/profile-pic.png' %}" class="img-responsive"></center>
 				</div>
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
@@ -20,38 +20,33 @@
 						Marcus Doe
 					</div>
 					<div class="profile-usertitle-job">
-						Developer
+						Paciente
 					</div>
 				</div>
 				<!-- END SIDEBAR USER TITLE -->
 				<!-- SIDEBAR BUTTONS -->
 				<div class="profile-userbuttons">
-					<button type="button" class="btn btn-success btn-sm">Follow</button>
-					<button type="button" class="btn btn-danger btn-sm">Message</button>
+					<button type="button" class="btn btn-success btn-sm"><i class="fa fa-print" aria-hidden="true"></i> Historial</button>
+					<button type="button" class="btn btn-danger btn-sm"><i class="fa fa-print" aria-hidden="true"></i> Terapias</button>
 				</div>
 				<!-- END SIDEBAR BUTTONS -->
 				<!-- SIDEBAR MENU -->
 				<div class="profile-usermenu">
-					<ul class="nav">
+					<ul class="nav flex-column">
 						<li class="active">
 							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Overview </a>
+							<i class="fa fa-user" aria-hidden="true"></i>
+							Perfil </a>
 						</li>
 						<li>
 							<a href="#">
-							<i class="glyphicon glyphicon-user"></i>
-							Account Settings </a>
+							<i class="fa fa-star" aria-hidden="true"></i>
+							Terapias </a>
 						</li>
 						<li>
 							<a href="#" target="_blank">
-							<i class="glyphicon glyphicon-ok"></i>
-							Tasks </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-flag"></i>
-							Help </a>
+							<i class="fa fa-files-o" aria-hidden="true"></i>
+							Historial Clínico </a>
 						</li>
 					</ul>
 				</div>
@@ -60,18 +55,104 @@
 		</div>
 		<div class="col-md-9">
             <div class="profile-content">
-			   Some user related content goes here...
+				<table class="table">
+				  <tbody>
+					<thead>
+						<tr>
+							<th scope="col">INFORMACIÓN PRINCIPAL</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+                    <tr>
+                        <td> Nombre Completo </td>
+                        <td> Adriana Mota </td>
+                    </tr>
+                    <tr>
+                        <td> Cédula </td>
+                        <td> 00101540995 </td>
+                    </tr>
+                    <tr>
+                        <td> Sexo / Edad </td>
+                        <td> Mujer / 68 </td>
+                    </tr>
+                    <tr>
+                        <td> Fecha de Nacimiento </td>
+                        <td> Jan. 1, 1948 </td>
+                    </tr>
+                    <tr>
+                        <td> Seguro Médico </td>
+                        <td> ARS Palic </td>
+                    </tr>
+                    <thead>
+						<tr>
+							<th scope="col">INFORMACIÓN DE CONTACTO</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+                    <tr>
+                        <td> Dirección </td>
+                        <td> Mnaz 4707 edif 15 ap 2-b Invivienda Sto Dgo </td>
+                    </tr>
+                    <tr>
+                        <td> Teléfono </td>
+                        <td> 8098497716 </td>
+                    </tr>
+                    <tr>
+                        <td> Teléfono 2 </td>
+                        <td> 8098497716 </td>
+                    </tr>
+                    <tr>
+                        <td> Celular </td>
+                        <td> 8098497716 </td>
+                    </tr>
+                    <thead>
+						<tr>
+							<th scope="col">INFORMACIÓN LABORAL</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+                    <tr>
+                        <td> Ocupación </td>
+                        <td> ama de casa </td>
+                    </tr>
+                    <tr>
+                        <td> Lugar de Trabajo </td>
+                        <td> *** </td>
+                    </tr>
+                    <tr>
+                        <td> Posición </td>
+                        <td> **** </td>
+                    </tr>
+                    <tr>
+                        <td> Teléfono del Trabajo </td>
+                        <td> 8098497716 </td>
+                    </tr>
+                    <thead>
+						<tr>
+							<th scope="col">CONTACTO DE EMERGENCIA</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+                    <tr>
+                        <td> Nombre </td>
+                        <td> Naty Lopez </td>
+                    </tr>
+                    <tr>
+                        <td> Teléfono </td>
+                        <td> 8098450419 </td>
+                    </tr>
+                    <tr>
+                        <td> Teléfono 2 </td>
+                        <td> 8098450419 </td>
+                    </tr>
+                    <tr>
+                        <td> Celular </td>
+                        <td> 8098450419 </td>
+                    </tr>
+				  </tbody>
+				</table>
             </div>
 		</div>
 	</div>
 </div>
-<center>
-<strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">KeenThemes</a></strong>
-</center>
-<br>
-<br>
-{% endblock %}
-{% block custom_js %}
-	<!-- TEMPLATE CUSTOM JS -->
-	<script src="{% static 'js/patients.js' %}"></script>
 {% endblock %}
