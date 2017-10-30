@@ -6,7 +6,7 @@ from .constants import sex, ars_insurance
 
 class Doctor(models.Model):
 	"""App that will manage all the doctors on the center."""
-	name = models.CharField(max_length=255)
+	first_name = models.CharField(max_length=255)
 	last_name = models.CharField(max_length=255)
 	cedula = models.CharField(max_length=255)
 	phone = models.CharField(max_length=255)
@@ -14,11 +14,12 @@ class Doctor(models.Model):
 	email = models.CharField(max_length=255)
 
 	def __str__(self):
-		return "%s %s" %(self.name, self.last_name)
+		return "%s %s" %(self.first_name, self.last_name)
 
 class PatientProfile(models.Model):
 	"""App that will manage the profile of a patient."""
-	full_name = models.CharField(max_length=255)
+	first_name = models.CharField(max_length=255)
+	last_name = models.CharField(max_length=255)
 	cedula = models.CharField(max_length=255)
 	sex = models.CharField(max_length=255, choices=sex)
 	datebirth = models.DateField()
@@ -41,7 +42,7 @@ class PatientProfile(models.Model):
 	emergency_cellphone = models.CharField(max_length=255, blank=True)
 
 	def __str__(self):
-		return self.full_name
+		return '%s %s' %(self.first_name, self.last_name)
 
 class ClinicHistory(models.Model):
 	"""App that will manage all the clinic history of a patient."""
@@ -57,4 +58,4 @@ class ClinicHistory(models.Model):
 	form_filled_by = models.CharField(max_length=255)
 
 	def __str__(self):
-		return self.patient
+		return str(self.patient)
