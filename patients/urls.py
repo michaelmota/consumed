@@ -3,9 +3,11 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 
 ### IMPORT ###
-from .views import PatientNew, PatientList
+from .views import PatientNew, PatientList, PatientEdit, PatientDelete
 
 urlpatterns = [
-	url(r'$', PatientList.as_view(), name="patients"),
-	url(r'nuevo/$', PatientNew.as_view(), name="patient-new"),
+    url(r'list/$', PatientList.as_view(), name="patient-list"),
+    url(r'nuevo/$', PatientNew.as_view(), name="patient-new"),
+    url(r'editar/(?P<pk>.*)/$', PatientEdit.as_view(), name="patient-edit"),
+    url(r'eliminar/(?P<pk>.*)/$', PatientDelete.as_view(), name="patient-delete"),
 ]

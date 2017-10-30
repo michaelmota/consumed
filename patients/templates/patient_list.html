@@ -7,11 +7,12 @@
 {% block content %}
 <div class="container">
     <div class="row profile">
-		<div class="col-md-12">
-<div class="panel-heading hidden-xs">
-<h5 class="panel-title">Listado de Pacientes</h5>
-</div>
+			<div class="col-md-12">
+				<div class="panel-heading hidden-xs">
+				<h5 class="panel-title">Listado de Pacientes</h5>
+			</div>
 			<div class="profile-content">
+				{% if object_list %}
 				<table class="table">
 				  <thead>
 				    <tr>
@@ -22,27 +23,32 @@
 				    </tr>
 				  </thead>
 				  <tbody>
+				  	{% for element in object_list %}
 				    <tr>
-				      <th scope="row">3</th>
-				      <td>Larry</td>
-				      <td>the Bird</td>
+				      <th scope="row">{{ element.id }}</th>
+				      <td><a href="#">{{ element.first_name }} {{ element.last_name}}</a></td>
+				      <td>{{ element.phone_1 }}</td>
 				      <td>
-				      		<!-- EDIT -->
-					      	<a class="btn btn-outline-primary btn-sm" href="#" role="button">
-					      		<i class="fa fa-pencil" aria-hidden="true"></i>
-				      		</a> 
-				      		<!-- DELETE -->
-				      		<a class="btn btn-outline-danger btn-sm" href="#" role="button">
-				      			<i class="fa fa-times" aria-hidden="true"></i>
-				      		</a>
+			      		<!-- EDIT -->
+				      	<a class="btn btn-outline-primary btn-sm" href="#" role="button">
+				      		<i class="fa fa-pencil" aria-hidden="true"></i>
+			      		</a> 
+			      		<!-- DELETE -->
+			      		<a class="btn btn-outline-danger btn-sm" href="#" role="button">
+			      			<i class="fa fa-times" aria-hidden="true"></i>
+			      		</a>
 				      </td>
+				      {% endfor %}
 				    </tr>
 				  </tbody>
 				</table>
+				{% else %}
+				<div class="alert alert-primary" role="alert">
+				  No encontramos ningún paciente en la base de datos. ¡Registra uno ahora!
+				</div>
+				{% endif %}
 			</div>
 		</div>
 	</div>
 </div>
-
-
 {% endblock %}

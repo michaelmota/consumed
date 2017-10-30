@@ -19,7 +19,7 @@ class PatientList(LoginRequiredMixin, ListView):
 class PatientNew(LoginRequiredMixin, CreateView):
 	template_name = "patient_new.html"
 	model = PatientProfile
-	fields = ['full_name', 'cedula', 'sex', 'datebirth', 'refered_by', 'insurance', 
+	fields = ['first_name', 'last_name', 'cedula', 'sex', 'datebirth', 'refered_by', 'insurance', 
 				'address', 'phone_1', 'phone_2', 'cellphone', 'ocupation', 'workplace', 'position', 
 				'work_phone', 'emergency_contact', 'emergency_phone_1', 'emergency_phone_2', 
 				'emergency_cellphone',]
