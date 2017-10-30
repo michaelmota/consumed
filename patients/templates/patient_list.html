@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% block page_title %}Pacientes{% endblock %}
 {% block custom_css %}
 	<!-- TEMPLATE CUSTOM CSS -->
 	<link href="{% static 'css/patients.css' %}" rel="stylesheet">
@@ -26,11 +27,13 @@
 				  	{% for element in object_list %}
 				    <tr>
 				      <th scope="row">{{ element.id }}</th>
-				      <td><a href="#">{{ element.first_name }} {{ element.last_name}}</a></td>
+				      <td><a href="{% url 'patient-view' element.id %}">
+				      	{{ element.first_name }} {{ element.last_name}}</a>
+				      </td>
 				      <td>{{ element.phone_1 }}</td>
 				      <td>
 			      		<!-- EDIT -->
-				      	<a class="btn btn-outline-primary btn-sm" href="#" role="button">
+				      	<a class="btn btn-outline-primary btn-sm" href="{% url 'patient-edit' element.id %}" role="button">
 				      		<i class="fa fa-pencil" aria-hidden="true"></i>
 			      		</a> 
 			      		<!-- DELETE -->

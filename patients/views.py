@@ -1,7 +1,7 @@
 from django.db.models import Sum
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import View, ListView, CreateView, DeleteView, UpdateView
+from django.views.generic import View, ListView, CreateView, DeleteView, UpdateView, DetailView
 from django.contrib import messages
 from django.core.urlresolvers import reverse_lazy
 
@@ -15,6 +15,10 @@ class PatientList(LoginRequiredMixin, ListView):
 	template_name = "patient_list.html"
 	model = PatientProfile
 	paginate_by = 10
+
+class PatientDetailView(LoginRequiredMixin, DetailView):
+	template_name = "patient_detail.html"
+	model = PatientProfile
 
 class PatientNew(LoginRequiredMixin, CreateView):
 	template_name = "patient_new.html"

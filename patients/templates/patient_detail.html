@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% block page_title %}{{object.first_name}} {{object.last_name}}{% endblock %}
 {% block custom_css %}
 	<!-- TEMPLATE CUSTOM CSS -->
 	<link href="{% static 'css/patients.css' %}" rel="stylesheet">
@@ -17,7 +18,7 @@
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						Marcus Doe
+						{{object.first_name}} {{object.last_name}}
 					</div>
 					<div class="profile-usertitle-job">
 						Paciente
@@ -65,23 +66,23 @@
 					</thead>
                     <tr>
                         <td> Nombre Completo </td>
-                        <td> Adriana Mota </td>
+                        <td> {{object.first_name}} {{object.last_name}} </td>
                     </tr>
                     <tr>
                         <td> Cédula </td>
-                        <td> 00101540995 </td>
+                        <td> {{object.cedula}} </td>
                     </tr>
                     <tr>
                         <td> Sexo / Edad </td>
-                        <td> Mujer / 68 </td>
+                        <td> {{object.sex}} / {{object.age}} </td>
                     </tr>
                     <tr>
                         <td> Fecha de Nacimiento </td>
-                        <td> Jan. 1, 1948 </td>
+                        <td> {{object.datebirth|date}} </td>
                     </tr>
                     <tr>
                         <td> Seguro Médico </td>
-                        <td> ARS Palic </td>
+                        <td> {{object.insurance}} </td>
                     </tr>
                     <thead>
 						<tr>
@@ -91,19 +92,19 @@
 					</thead>
                     <tr>
                         <td> Dirección </td>
-                        <td> Mnaz 4707 edif 15 ap 2-b Invivienda Sto Dgo </td>
+                        <td> {{object.address}} </td>
                     </tr>
                     <tr>
                         <td> Teléfono </td>
-                        <td> 8098497716 </td>
+                        <td> {{object.phone_1}} </td>
                     </tr>
                     <tr>
                         <td> Teléfono 2 </td>
-                        <td> 8098497716 </td>
+                        <td> {{object.phone_2}} </td>
                     </tr>
                     <tr>
                         <td> Celular </td>
-                        <td> 8098497716 </td>
+                        <td> {{object.cellphone}} </td>
                     </tr>
                     <thead>
 						<tr>
@@ -113,41 +114,39 @@
 					</thead>
                     <tr>
                         <td> Ocupación </td>
-                        <td> ama de casa </td>
+                        <td> {{object.ocupation}} </td>
                     </tr>
                     <tr>
                         <td> Lugar de Trabajo </td>
-                        <td> *** </td>
+                        <td> {{object.workplace}} </td>
                     </tr>
                     <tr>
                         <td> Posición </td>
-                        <td> **** </td>
+                        <td> {{object.position}} </td>
                     </tr>
                     <tr>
                         <td> Teléfono del Trabajo </td>
-                        <td> 8098497716 </td>
+                        <td> {{object.work_phone}} </td>
                     </tr>
-                    <thead>
-						<tr>
-							<th scope="col">CONTACTO DE EMERGENCIA</th>
-							<th scope="col"></th>
-						</tr>
-					</thead>
+					<tr>
+						<th>CONTACTO DE EMERGENCIA</th>
+						<th></th>
+					</tr>
                     <tr>
                         <td> Nombre </td>
-                        <td> Naty Lopez </td>
+                        <td> {{object.emergency_contact}} </td>
                     </tr>
                     <tr>
                         <td> Teléfono </td>
-                        <td> 8098450419 </td>
+                        <td> {{object.emergency_phone_1}} </td>
                     </tr>
                     <tr>
                         <td> Teléfono 2 </td>
-                        <td> 8098450419 </td>
+                        <td> {{object.emergency_phone_2}} </td>
                     </tr>
                     <tr>
                         <td> Celular </td>
-                        <td> 8098450419 </td>
+                        <td> {{object.emergency_cellphone}} </td>
                     </tr>
 				  </tbody>
 				</table>

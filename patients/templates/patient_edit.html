@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load widget_tweaks %}
 {% load staticfiles %}
-{% block page_title %}Nuevo Paciente{% endblock %}
+{% block page_title %}{{object.first_name}} {{object.last_name}}{% endblock %}
 {% block custom_css %}
 	<!-- TEMPLATE CUSTOM CSS -->
 	<link href="{% static 'css/patients.css' %}" rel="stylesheet">
@@ -159,6 +159,4 @@
 		</div>
 	</div>
 </div>
-{% endblock %}
-{% block custom_js %}
 {% endblock %}

@@ -8,4 +8,5 @@ ars_insurance = (
 	('2', 'ARS Palic'),
 	('3', 'SeNaSa'),
 	('4', 'ARS Banreservas'),
+	('5', 'ARS Universal'),
 )
