@@ -22,6 +22,7 @@ class PatientProfile(models.Model):
 	last_name = models.CharField(max_length=255)
 	cedula = models.CharField(max_length=255)
 	sex = models.CharField(max_length=255, choices=sex)
+	age = models.CharField(max_length=3)
 	datebirth = models.DateField()
 	refered_by = models.CharField(max_length=255)
 	insurance = models.CharField(max_length=255, choices=ars_insurance)
