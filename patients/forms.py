@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.utils.translation import ugettext as _
 from consumed.settings import DATE_INPUT_FORMATS
 
-from .models import PatientProfile
+from .models import PatientProfile, Therapy
 
 class PatientsForm(forms.ModelForm):
 	date = forms.DateField(input_formats=DATE_INPUT_FORMATS)
@@ -14,3 +14,10 @@ class PatientsForm(forms.ModelForm):
 				'address', 'phone_1', 'phone_2', 'cellphone', 'ocupation', 'workplace', 'position', 
 				'work_phone', 'emergency_contact', 'emergency_phone_1', 'emergency_phone_2', 
 				'emergency_cellphone',]
+
+class TherapyForm(forms.ModelForm):
+	date = forms.DateField(input_formats=DATE_INPUT_FORMATS)
+
+	class Meta:
+		model = Therapy
+		fields = ['patient', 'doctor', 'date', 'insurance', 'physiotherapy', 'diagnosis']

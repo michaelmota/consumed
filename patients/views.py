@@ -5,8 +5,8 @@ from django.views.generic import View, ListView, CreateView, DeleteView, UpdateV
 from django.contrib import messages
 from django.core.urlresolvers import reverse_lazy
 
-from .models import Doctor, PatientProfile, ClinicHistory
-from .forms import PatientsForm
+from .models import Doctor, PatientProfile, ClinicHistory, Therapy
+from .forms import PatientsForm, TherapyForm
 # =================================================================
 # Patients
 # =================================================================
@@ -53,3 +53,47 @@ class PatientDelete(LoginRequiredMixin, DeleteView):
 
 def test_view(request):
 	return render(request, 'patient_detail.html')
+
+# =================================================================
+# Terapias
+# =================================================================
+
+class TherapyList(LoginRequiredMixin, ListView):
+	template_name = "therapy_list.html"
+	model = Therapy
+	paginate_by = 30
+
+class TherapyDetailView(LoginRequiredMixin, DetailView):
+	template_name = "therapy_detail.html"
+	model = Therapy
+
+class TherapyNew(LoginRequiredMixin, CreateView):
+	template_name = "therapy_new.html"
+	model = PatientProfile
+	success_url = reverse_lazy('') #	add link
+	form_class = TherapyForm
+
+	def form_valid(self, form):
+		messages.success(self.request, response_messages.SAVE_SUCCESSFULL)
+		form.instance.created_by = self.request.user
+		return super(TherapyNew, self).form_valid(form)
+
+class TherapyEdit(LoginRequiredMixin, UpdateView): 
+	template_name = "therapy_edit.html"
+	model = Therapy
+	form_class = TherapyForm
+	success_url = reverse_lazy('') #	add link
+
+	def form_valid(self, form):
+		messages.success(self.request, response_messages.UPDATE_SUCCESSFULL)
+		form.instance.created_by = self.request.user
+		return super(TherapyEdit, self).form_valid(form)
+
+class TherapyDelete(LoginRequiredMixin, DeleteView):
+    template_name = "therapy_delete.html"
+    model = Therapy
+    success_url = reverse_lazy('')
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(request, response_messages.DELETE_SUCCESSFULL)
+        return super(TherapyDelete, self).delete(request, *args, **kwargs)

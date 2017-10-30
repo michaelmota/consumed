@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 
 ### IMPORT ###
 from .views import PatientNew, PatientList, PatientEdit, PatientDelete, PatientDetailView
+from .views import TherapyNew, TherapyList, TherapyEdit, TherapyDelete, TherapyDetailView
 
 urlpatterns = [
     url(r'list/$', PatientList.as_view(), name="patient-list"),
@@ -11,4 +12,7 @@ urlpatterns = [
     url(r'ver/(?P<pk>.*)/$', PatientDetailView.as_view(), name="patient-view"),
     url(r'editar/(?P<pk>.*)/$', PatientEdit.as_view(), name="patient-edit"),
     url(r'eliminar/(?P<pk>.*)/$', PatientDelete.as_view(), name="patient-delete"),
+    # Therapy's
+    url(r'ver/terapias/$', TherapyList.as_view(), name="therapy-list"),
+    url(r'ver/terapias/new/$', TherapyNew.as_view(), name="therapy-new"),
 ]
