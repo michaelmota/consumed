@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext as _
 
 # Create your models here.
 
@@ -60,3 +61,20 @@ class ClinicHistory(models.Model):
 
 	def __str__(self):
 		return str(self.patient)
+
+class Therapy(models.Model):
+	"""Manages the therapy's for each of the patients."""
+	patient = models.ForeignKey(PatientProfile)
+	doctor = models.ForeignKey(Doctor)
+	date = models.DateField(help_text=_("Fecha de la Terapia"), verbose_name=_("Fecha"))
+	insurance = models.CharField(max_length=155, choices=ars_insurance)
+	physiotherapy = models.CharField(max_length=2000, blank=True)
+	diagnosis = models.CharField(max_length=2000, blank=True)
+	timestamp = models.DateTimeField(auto_now_add=True)
+
+	def __str__(self):
+		return str(self.patient)
+
+
+
+
