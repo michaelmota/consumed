@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n static add_class %}
+{% load widget_tweaks %}
 {% load staticfiles %}
 {% block custom_css %}
 	<!-- TEMPLATE CUSTOM CSS -->
@@ -34,31 +34,31 @@
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Sexo</label>
 				    <div class="col-sm-8">
-				      {{ form.sexo|add_class:"form-control" }}
+				      {{ form.sex|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Edad</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.age|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Fecha de Nacimiento</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control datepicker" }}
+				      {{ form.datebirth|add_class:"form-control datepicker" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Referido por</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.refered_by|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Seguro Médico</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.insurance|add_class:"form-control" }}
 				    </div>
 				  </div>
 
@@ -68,25 +68,25 @@
 				  <div class="form-group row">
 				    <label for="inputEmail3" class="col-sm-4 col-form-label">Dirección</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.address|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Teléfono</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.phone_1|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Teléfono 2</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.phone_2|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Celular</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.cellphone|add_class:"form-control" }}
 				    </div>
 				  </div>
 
@@ -96,25 +96,25 @@
 				  <div class="form-group row">
 				    <label for="inputEmail3" class="col-sm-4 col-form-label">Ocupación</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.ocupation|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Lugar de Trabajo</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.workplace|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Posición</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.position|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Teléfono del Trabajo</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.work_phone|add_class:"form-control" }}
 				    </div>
 				  </div>
 
@@ -124,30 +124,30 @@
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">En caso de emergencia contactar a</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.emergency_contact|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Teléfono</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.emergency_phone_1|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Celular</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.emergency_phone_2|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <div class="form-group row">
 				    <label for="inputPassword3" class="col-sm-4 col-form-label">Otro número</label>
 				    <div class="col-sm-8">
-				      {{ form.first_name|add_class:"form-control" }}
+				      {{ form.emergency_cellphone|add_class:"form-control" }}
 				    </div>
 				  </div>
 				  <hr/>
-				  <button type="button" class="btn btn-danger">Cancelar</button> 
-				  <button type="button" class="btn btn-success">Registrar Nuevo Paciente</button>
+				  <a href="{% url 'patient-list' %}" class="btn btn-danger">Cancelar</a>
+				  <input class="btn btn-success" type="submit" value="Registrar Nuevo Paciente">
 				</form>
 			</div>
 		</div>

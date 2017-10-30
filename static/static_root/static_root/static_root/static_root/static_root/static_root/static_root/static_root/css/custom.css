@@ -1,0 +1,20 @@
+/* Show it is fixed to the top */
+body {
+  padding-top: 4.5rem;
+}
+.bg-dark {
+    background: #208ced; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left, #208ced , #7b63ea); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #208ced, #7b63ea); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #208ced, #7b63ea); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #208ced , #7b63ea); /* Standard syntax (must be last) */
+}
+.navigation-container .main-menu-child>li.active>a, .navigation-container .main-menu-child>li>a.active {
+    background: rgba(33,38,71,0.2) !important;
+}
+.btn-outline-success {
+    color: #ffffff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #ffffff;
+}

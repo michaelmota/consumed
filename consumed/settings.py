@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'patients',
     'cashflow',
+    # 3RD PARTY
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -93,16 +95,42 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+LANGUAGE_CODE = 'es-MX'
+TIME_ZONE = 'America/Merida'
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
+# Configuración de formatos de fechas
+
+DATETIME_INPUT_FORMATS = (
+    '%Y-%m-%d %H:%M:%S',     # '2006-10-25 14:30:59'
+    '%Y-%m-%d %H:%M:%S.%f',  # '2006-10-25 14:30:59.000200'
+    '%Y-%m-%d %H:%M',        # '2006-10-25 14:30'
+    '%Y-%m-%d',              # '2006-10-25'
+    '%d-%m-%Y %H:%M:%S',     # '2006-10-25 14:30:59'
+    '%d-%m-%Y %H:%M:%S.%f',  # '2006-10-25 14:30:59.000200'
+    '%d-%m-%Y %H:%M',        # '2006-10-25 14:30'
+    '%Y-%m-%d',              # '2006-10-25'
+    '%m/%d/%Y %H:%M:%S',     # '10/25/2006 14:30:59'
+    '%m/%d/%Y %H:%M:%S.%f',  # '10/25/2006 14:30:59.000200'
+    '%m/%d/%Y %H:%M',        # '10/25/2006 14:30'
+    '%m/%d/%Y',              # '10/25/2006'
+    '%m/%d/%y %H:%M:%S',     # '10/25/06 14:30:59'
+    '%m/%d/%y %H:%M:%S.%f',  # '10/25/06 14:30:59.000200'
+    '%m/%d/%y %H:%M',        # '10/25/06 14:30'
+    '%m/%d/%y',              # '10/25/06'
+    '%m/%d/%Y',              # '10/25/2006'
+    '%d/%m/%Y',              # '10/25/2006'
+    '%d/%m/%y',              # '10/25/06'
+)
+
+DATE_INPUT_FORMATS = (
+    '%d/%m/%Y',                         # '10/25/2006'
+    '%d/%m/%y',                         # '10/25/06'
+    '%d-%m-%Y',                         # '10-25-2006'
+    '%d-%m-%y',                         # '10-25-06'
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
