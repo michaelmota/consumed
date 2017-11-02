@@ -58,10 +58,9 @@ def test_view(request):
 # Terapias
 # =================================================================
 
-class TherapyList(LoginRequiredMixin, ListView):
+class TherapyList(LoginRequiredMixin, DetailView):
 	template_name = "therapy_list.html"
 	model = Therapy
-	paginate_by = 30
 
 class TherapyDetailView(LoginRequiredMixin, DetailView):
 	template_name = "therapy_detail.html"

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block page_title %}Terapias{% endblock %}
+{% block custom_css %}
+	<!-- TEMPLATE CUSTOM CSS -->
+	<link href="{% static 'css/patients.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<center><img src="{% static 'img/profile-pic.png' %}" class="img-responsive"></center>
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{object.patient}}
+					</div>
+					<div class="profile-usertitle-job">
+						Paciente
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+					<button type="button" class="btn btn-success btn-sm"><i class="fa fa-print" aria-hidden="true"></i> Historial</button>
+					<button type="button" class="btn btn-danger btn-sm"><i class="fa fa-print" aria-hidden="true"></i> Terapias</button>
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav flex-column">
+						<li>
+							<a href="#">
+							<i class="fa fa-user" aria-hidden="true"></i>
+							Perfil </a>
+						</li>
+						<li class="active">
+							<a href="{% url 'therapy-list' object.id %}">
+							<i class="fa fa-star" aria-hidden="true"></i>
+							Terapias </a>
+						</li>
+						<li>
+							<a href="#" target="_blank">
+							<i class="fa fa-files-o" aria-hidden="true"></i>
+							Historial Clínico </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="terapias-content">
+            	{% for object in object_list %}
+            {% if object.patient == object.patient %}
+				<div class="card">
+				  <div class="card-header">
+				    Terapia
+				  </div>
+					<div class="card-body">
+						<blockquote class="blockquote mb-0">
+							<p><strong>Diagnóstico:</strong></br>{{object.diagnosis}}</p>
+							<p><strong>Fisioterapia:</strong></br> {{object.physiotherapy}}</p>
+							<footer class="blockquote-footer">
+								Doctor: {{object.doctor}} - Fecha: {{object.date|date}}
+							</footer>
+						</blockquote>
+					</div>
+				</div>
+			{% endif %}
+				{% endfor %}
+            </div>
+		</div>
+	</div>
+</div>
+{% endblock %}

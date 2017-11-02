@@ -68,8 +68,8 @@ class Therapy(models.Model):
 	doctor = models.ForeignKey(Doctor)
 	date = models.DateField(help_text=_("Fecha de la Terapia"), verbose_name=_("Fecha"))
 	insurance = models.CharField(max_length=155, choices=ars_insurance)
-	physiotherapy = models.CharField(max_length=2000, blank=True)
-	diagnosis = models.CharField(max_length=2000, blank=True)
+	physiotherapy = models.TextField(max_length=2000, blank=True)
+	diagnosis = models.TextField(max_length=2000, blank=True)
 	timestamp = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):

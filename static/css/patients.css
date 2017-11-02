@@ -144,3 +144,9 @@ body {
     background: #f8f9fa;
     border: 1px solid #c3d2dc;
 }
+.terapias-content {
+    padding: 10px;
+    background: #fff;
+    min-height: 460px;
+    border: 1px solid #c3d2dc;
+}
