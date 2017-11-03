@@ -56,8 +56,7 @@
 		</div>
 		<div class="col-md-9">
             <div class="terapias-content">
-            	{% for object in object_list %}
-            {% if object.patient == object.patient %}
+            	{% for object in terapias %}
 				<div class="card">
 				  <div class="card-header">
 				    Terapia
@@ -72,7 +71,6 @@
 						</blockquote>
 					</div>
 				</div>
-			{% endif %}
 				{% endfor %}
             </div>
 		</div>

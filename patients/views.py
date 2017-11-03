@@ -1,6 +1,7 @@
 from django.db.models import Sum
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.views.generic import View, ListView, CreateView, DeleteView, UpdateView, DetailView
 from django.contrib import messages
 from django.core.urlresolvers import reverse_lazy
@@ -58,9 +59,16 @@ def test_view(request):
 # Terapias
 # =================================================================
 
-class TherapyList(LoginRequiredMixin, DetailView):
-	template_name = "therapy_list.html"
-	model = Therapy
+@login_required
+def TherapyList(request, pk=None):
+	pacientes = get_object_or_404(PatientProfile, pk=pk)
+	terapias = Therapy.objects.all().filter(patient=pk)
+
+	ctx = {
+		"pacientes":pacientes,
+		"terapias":terapias,
+	}
+	return render(request, "therapy_list.html", ctx)
 
 class TherapyDetailView(LoginRequiredMixin, DetailView):
 	template_name = "therapy_detail.html"

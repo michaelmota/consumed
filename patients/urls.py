@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'editar/(?P<pk>.*)/$', PatientEdit.as_view(), name="patient-edit"),
     url(r'eliminar/(?P<pk>.*)/$', PatientDelete.as_view(), name="patient-delete"),
     # Therapy's
-    url(r'ver/terapias/(?P<pk>.*)$', TherapyList.as_view(), name="therapy-list"),
+    url(r'ver/terapias/(?P<pk>.*)$', TherapyList, name="therapy-list"),
     url(r'terapias/new/$', TherapyNew.as_view(), name="therapy-new"),
+    # Tests
 ]
