@@ -18,7 +18,7 @@
 				<!-- SIDEBAR USER TITLE -->
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						{{object.patient}}
+						{{paciente.first_name}} {{paciente.last_name}}
 					</div>
 					<div class="profile-usertitle-job">
 						Paciente
@@ -35,17 +35,17 @@
 				<div class="profile-usermenu">
 					<ul class="nav flex-column">
 						<li>
-							<a href="#">
+							<a href="{% url 'pacientes:view' paciente.id %}">
 							<i class="fa fa-user" aria-hidden="true"></i>
 							Perfil </a>
 						</li>
 						<li class="active">
-							<a href="{% url 'therapy-list' object.id %}">
+							<a href="{% url 'pacientes:therapy-list' paciente.id %}">
 							<i class="fa fa-star" aria-hidden="true"></i>
 							Terapias </a>
 						</li>
 						<li>
-							<a href="#" target="_blank">
+							<a href="{% url 'pacientes:clinich-view' paciente.id %}">
 							<i class="fa fa-files-o" aria-hidden="true"></i>
 							Historial Clínico </a>
 						</li>
@@ -56,7 +56,7 @@
 		</div>
 		<div class="col-md-9">
             <div class="terapias-content">
-            	{% for object in terapias %}
+            	{% for object in terapia %}
 				<div class="card">
 				  <div class="card-header">
 				    Terapia
@@ -73,6 +73,8 @@
 				</div>
 				{% endfor %}
             </div>
+		</div>
+		
 		</div>
 	</div>
 </div>

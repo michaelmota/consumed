@@ -150,3 +150,33 @@ body {
     min-height: 460px;
     border: 1px solid #c3d2dc;
 }
+
+.widget .panel-body { padding:0px; }
+.widget .list-group { margin-bottom: 0; }
+.widget .panel-title { display:inline }
+.widget .label-info { float: right; }
+.widget li.list-group-item {border-radius: 0;border: 0;border-top: 1px solid #ddd;}
+.widget li.list-group-item:hover { background-color: rgba(86,61,124,.1); }
+.widget .mic-info { color: #666666;font-size: 11px; }
+.widget .action { margin-top:5px; }
+.widget .comment-text { font-size: 12px; }
+.widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px; }
+
+      .row{
+        margin-top:40px;
+        padding: 0 10px;
+    }
+    .clickable{
+        cursor: pointer;   
+    }
+
+    .panel-heading div {
+      margin-top: -18px;
+      font-size: 15px;
+    }
+    .panel-heading div span{
+      margin-left:5px;
+    }
+    .panel-body{
+      display: none;
+    }

@@ -2,7 +2,7 @@ from django.db.models import Sum
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from django.views.generic import View, ListView, CreateView, DeleteView, UpdateView, DetailView
+from django.views.generic import View, ListView, CreateView, DeleteView, UpdateView, DetailView, TemplateView
 from django.contrib import messages
 from django.core.urlresolvers import reverse_lazy
 
@@ -18,7 +18,7 @@ class PatientList(LoginRequiredMixin, ListView):
 	paginate_by = 10
 
 class PatientDetailView(LoginRequiredMixin, DetailView):
-	template_name = "patient_detail.html"
+	template_name = "patient_view.html"
 	model = PatientProfile
 
 class PatientNew(LoginRequiredMixin, CreateView):
@@ -52,23 +52,20 @@ class PatientDelete(LoginRequiredMixin, DeleteView):
         messages.success(request, response_messages.DELETE_SUCCESSFULL)
         return super(PatientDelete, self).delete(request, *args, **kwargs)
 
-def test_view(request):
-	return render(request, 'patient_detail.html')
-
 # =================================================================
 # Terapias
 # =================================================================
 
 @login_required
 def TherapyList(request, pk=None):
-	pacientes = get_object_or_404(PatientProfile, pk=pk)
-	terapias = Therapy.objects.all().filter(patient=pk)
+	paciente = get_object_or_404(PatientProfile, pk=pk)
+	terapia = Therapy.objects.all().filter(patient=pk)
 
 	ctx = {
-		"pacientes":pacientes,
-		"terapias":terapias,
+		"paciente":paciente,
+		"terapia":terapia,
 	}
-	return render(request, "therapy_list.html", ctx)
+	return render(request, "therapy_view.html", ctx)
 
 class TherapyDetailView(LoginRequiredMixin, DetailView):
 	template_name = "therapy_detail.html"
@@ -104,3 +101,36 @@ class TherapyDelete(LoginRequiredMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(request, response_messages.DELETE_SUCCESSFULL)
         return super(TherapyDelete, self).delete(request, *args, **kwargs)
+
+# =================================================================
+# Historial Clínico
+# =================================================================
+
+def ClinicHistoryView(request, id=None):
+	instance = get_object_or_404(PatientProfile, id=id)
+	clinich = ClinicHistory.objects.all().filter(patient=id)[0]
+
+	ctx = {
+		"instance":instance,
+		"clinich":clinich,
+	}
+	return render(request, "clinichistory_view.html", ctx)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

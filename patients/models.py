@@ -72,6 +72,9 @@ class Therapy(models.Model):
 	diagnosis = models.TextField(max_length=2000, blank=True)
 	timestamp = models.DateTimeField(auto_now_add=True)
 
+	def get_absolute_url(self):
+		return reverse('patient-view', kwargs={'pk': self.pk})
+
 	def __str__(self):
 		return str(self.patient)
 
